@@ -1,0 +1,201 @@
+{
+  "project": {
+    "name": "CyberSec AI Assistant",
+    "description": "Assistant IA avancé spécialisé en cybersécurité",
+    "version": "1.0.0",
+    "author": "Yao Kouakou Luc Annicet",
+    "email": "yao.kouakou.dev@gmaii.com",
+    "github": "https://github.com/hackerduckman89/cybersec-ai-assistant"
+  },
+  "cursor": {
+    "ai": {
+      "provider": "anthropic",
+      "model": "claude-3-sonnet",
+      "context": {
+        "includeFiles": [
+          "README.md",
+          "requirements.txt",
+          "main.py",
+          "demo_launcher.py",
+          "core/",
+          "api/",
+          "security/",
+          "communication/"
+        ],
+        "excludePatterns": [
+          "venv/**",
+          "__pycache__/**",
+          "*.pyc",
+          "*.log",
+          ".git/**"
+        ]
+      }
+    },
+    "editor": {
+      "tabSize": 4,
+      "insertSpaces": true,
+      "detectIndentation": true,
+      "formatOnSave": true,
+      "formatOnType": true
+    },
+    "python": {
+      "defaultInterpreter": "./venv/bin/python",
+      "linting": {
+        "enabled": true,
+        "pylintEnabled": true,
+        "flake8Enabled": true,
+        "mypyEnabled": true
+      },
+      "formatting": {
+        "provider": "black",
+        "autopep8Args": ["--max-line-length=88"]
+      }
+    },
+    "files": {
+      "associations": {
+        "*.py": "python",
+        "*.bat": "batch",
+        "*.sh": "shellscript",
+        "Dockerfile": "dockerfile",
+        "docker-compose.yml": "yaml"
+      },
+      "exclude": {
+        "**/__pycache__": true,
+        "**/venv": true,
+        "**/*.pyc": true,
+        "**/.git": true,
+        "**/logs": true
+      }
+    },
+    "terminal": {
+      "integrated": {
+        "defaultProfile": {
+          "windows": "Command Prompt",
+          "linux": "bash",
+          "osx": "zsh"
+        },
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.black-formatter",
+      "ms-python.flake8",
+      "ms-python.mypy-type-checker",
+      "ms-vscode.vscode-json",
+      "redhat.vscode-yaml",
+      "ms-vscode.vscode-docker"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Installer les dépendances",
+        "type": "shell",
+        "command": "pip install -r requirements.txt",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Lancer la démo",
+        "type": "shell",
+        "command": "python demo_launcher.py",
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Lancer le serveur principal",
+        "type": "shell",
+        "command": "python main.py",
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "new"
+        }
+      },
+      {
+        "label": "Tests de structure",
+        "type": "shell",
+        "command": "python test_structure.py",
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Docker Build",
+        "type": "shell",
+        "command": "docker build -t cybersec-ai-assistant .",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Docker Compose Up",
+        "type": "shell",
+        "command": "docker-compose up -d",
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "shared"
+        }
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Lancer CyberSec AI Assistant",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/main.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}"
+        }
+      },
+      {
+        "name": "Démo CyberSec AI",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/demo_launcher.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}"
+      },
+      {
+        "name": "Tests de Structure",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/test_structure.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder}"
+      }
+    ]
+  }
+}
