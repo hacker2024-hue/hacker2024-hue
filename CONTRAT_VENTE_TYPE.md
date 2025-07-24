@@ -13,7 +13,7 @@
 **Qualité** : Entrepreneur individuel / Développeur logiciel  
 **Adresse** : [Adresse à compléter]  
 **SIRET** : [À compléter]  
-**Email** : luc.annicet@cybersec-ai.com  
+**Email** : yao.kouakou.dev@gmaii.com  
 **Téléphone** : +33 (0)X XX XX XX XX  
 
 ### LICENCIÉ

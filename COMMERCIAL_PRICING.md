@@ -188,13 +188,13 @@
 ## 📞 Contact Commercial
 
 ### 🎯 **Équipe Ventes**
-**Email** : sales@cybersec-ai.com  
+**Email** : yao.kouakou.dev@gmaii.com  
 **Téléphone** : +33 (0)1 XX XX XX XX  
 **Horaires** : 9h-18h (Lun-Ven, UTC+1)
 
 ### 👨‍💼 **Contact Créateur**
 **Yao Kouakou Luc Annicet**  
-**Email Direct** : luc.annicet@cybersec-ai.com  
+**Email Direct** : yao.kouakou.dev@gmaii.com  
 **LinkedIn** : [Profil LinkedIn]  
 
 ### 🌍 **Bureaux**

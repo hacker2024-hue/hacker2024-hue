@@ -139,7 +139,7 @@ cybersec-ai-assistant/
 
 ```bash
 # Clonage du repository
-git clone https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant.git
+git clone https://github.com/hackerduckman89/cybersec-ai-assistant.git
 cd cybersec-ai-assistant
 
 # Installation des dépendances
@@ -162,7 +162,7 @@ python main.py
 
 ```bash
 # Clonage et démarrage avec Docker Compose
-git clone https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant.git
+git clone https://github.com/hackerduckman89/cybersec-ai-assistant.git
 cd cybersec-ai-assistant
 
 # Démarrage de tous les services
@@ -335,7 +335,7 @@ docker-compose --profile monitoring up -d
 - **Isolation Docker** des services
 
 ### 🚨 Signalement de Vulnérabilités
-Pour signaler une vulnérabilité de sécurité, contactez-nous à [security@cybersec-ai.com]
+Pour signaler une vulnérabilité de sécurité, contactez-nous à [yao.kouakou.dev@gmaii.com]
 
 ---
 
@@ -385,9 +385,9 @@ Nous accueillons les contributions ! Consultez notre guide de contribution :
 ## 📞 Support & Contact
 
 ### 🆘 Support Technique
-- **Documentation** : [docs.cybersec-ai.com]
-- **GitHub Issues** : [github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant/issues]
-- **Email** : support@cybersec-ai.com
+- **Documentation** : [GitHub Wiki](https://github.com/hackerduckman89/cybersec-ai-assistant/wiki)
+- **GitHub Issues** : [github.com/hackerduckman89/cybersec-ai-assistant/issues]
+- **Email** : yao.kouakou.dev@gmaii.com
 
 ### 🌐 Communauté
 - **Discord** : [discord.gg/cybersec-ai]
@@ -395,10 +395,10 @@ Nous accueillons les contributions ! Consultez notre guide de contribution :
 - **LinkedIn** : [CyberSec AI Assistant]
 
 ### 📧 Contact Commercial
-Pour une utilisation en entreprise : enterprise@cybersec-ai.com
+Pour une utilisation en entreprise : yao.kouakou.dev@gmaii.com
 
 ### 👨‍💻 Contact Développeur
-**Yao Kouakou Luc Annicet** : luc.annicet@cybersec-ai.com
+**Yao Kouakou Luc Annicet** : yao.kouakou.dev@gmaii.com
 
 ---
 
@@ -436,7 +436,7 @@ Pour une utilisation en production, une licence commerciale est requise.
 [![Documentation](https://img.shields.io/badge/Voir-Documentation-blue.svg?style=for-the-badge)](#)
 [![Démo](https://img.shields.io/badge/Essayer-Démo-orange.svg?style=for-the-badge)](#)
 
-**Développé avec ❤️ par [Yao Kouakou Luc Annicet](https://github.com/hacker2024-hue)**  
+**Développé avec ❤️ par [Yao Kouakou Luc Annicet](https://github.com/hackerduckman89)**  
 **Version 1.0.0** | **Licence MIT** | **Python 3.8+**
 
 </div>
