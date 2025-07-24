@@ -410,7 +410,8 @@ Une version de démonstration est disponible sous licence MIT pour évaluation e
 ### 💼 Licence Commerciale
 Pour une utilisation en production, une licence commerciale est requise.
 
-📋 **Documents de licence disponibles :**
+📋 **Documents disponibles :**
+- [📥 TELECHARGEMENT.md](TELECHARGEMENT.md) - **Guide de téléchargement complet**
 - [LICENSE](LICENSE) - Licence commerciale complète
 - [COMMERCIAL_PRICING.md](COMMERCIAL_PRICING.md) - Tarification et offres
 - [CONTRAT_VENTE_TYPE.md](CONTRAT_VENTE_TYPE.md) - Modèle de contrat
