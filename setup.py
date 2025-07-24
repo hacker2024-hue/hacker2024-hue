@@ -23,16 +23,16 @@ requirements = read_requirements("requirements.txt")
 setup(
     name="cybersec-ai-assistant",
     version="1.0.0",
-    author="hacker2024-hue",
-    author_email="contact@cybersec-ai.com",
+    author="Yao Kouakou Luc Annicet",
+    author_email="luc.annicet@cybersec-ai.com",
     description="Assistant IA avancé spécialisé en cybersécurité",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/hacker2024-hue/cybersec-ai-assistant",
+    url="https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant",
     project_urls={
-        "Bug Tracker": "https://github.com/hacker2024-hue/cybersec-ai-assistant/issues",
+        "Bug Tracker": "https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant/issues",
         "Documentation": "https://cybersec-ai-docs.readthedocs.io/",
-        "Source Code": "https://github.com/hacker2024-hue/cybersec-ai-assistant",
+        "Source Code": "https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant",
     },
     packages=find_packages(),
     classifiers=[

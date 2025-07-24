@@ -5,7 +5,7 @@
 FROM python:3.11-slim as base
 
 # Métadonnées
-LABEL maintainer="hacker2024-hue"
+LABEL maintainer="Yao Kouakou Luc Annicet"
 LABEL description="CyberSec AI Assistant - Intelligence Artificielle en Cybersécurité"
 LABEL version="1.0.0"
 

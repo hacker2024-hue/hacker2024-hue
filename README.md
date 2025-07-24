@@ -139,7 +139,7 @@ cybersec-ai-assistant/
 
 ```bash
 # Clonage du repository
-git clone https://github.com/hacker2024-hue/cybersec-ai-assistant.git
+git clone https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant.git
 cd cybersec-ai-assistant
 
 # Installation des dépendances
@@ -162,7 +162,7 @@ python main.py
 
 ```bash
 # Clonage et démarrage avec Docker Compose
-git clone https://github.com/hacker2024-hue/cybersec-ai-assistant.git
+git clone https://github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant.git
 cd cybersec-ai-assistant
 
 # Démarrage de tous les services
@@ -355,6 +355,9 @@ Nous accueillons les contributions ! Consultez notre guide de contribution :
 - Développeurs backend Python
 - Experts en infrastructure cloud
 
+### 👨‍💻 Développeur Principal
+**Yao Kouakou Luc Annicet** - Architecte logiciel et expert en cybersécurité
+
 ---
 
 ## 📋 Roadmap
@@ -383,7 +386,7 @@ Nous accueillons les contributions ! Consultez notre guide de contribution :
 
 ### 🆘 Support Technique
 - **Documentation** : [docs.cybersec-ai.com]
-- **GitHub Issues** : [github.com/hacker2024-hue/cybersec-ai-assistant/issues]
+- **GitHub Issues** : [github.com/yao-kouakou-luc-annicet/cybersec-ai-assistant/issues]
 - **Email** : support@cybersec-ai.com
 
 ### 🌐 Communauté
@@ -393,6 +396,9 @@ Nous accueillons les contributions ! Consultez notre guide de contribution :
 
 ### 📧 Contact Commercial
 Pour une utilisation en entreprise : enterprise@cybersec-ai.com
+
+### 👨‍💻 Contact Développeur
+**Yao Kouakou Luc Annicet** : luc.annicet@cybersec-ai.com
 
 ---
 
@@ -419,7 +425,7 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de
 [![Documentation](https://img.shields.io/badge/Voir-Documentation-blue.svg?style=for-the-badge)](#)
 [![Démo](https://img.shields.io/badge/Essayer-Démo-orange.svg?style=for-the-badge)](#)
 
-**Développé avec ❤️ par [@hacker2024-hue](https://github.com/hacker2024-hue)**  
+**Développé avec ❤️ par [Yao Kouakou Luc Annicet](https://github.com/hacker2024-hue)**  
 **Version 1.0.0** | **Licence MIT** | **Python 3.8+**
 
 </div>

@@ -93,7 +93,7 @@ def print_banner():
     
     print("\033[96m" + banner + "\033[0m")
     print("\033[93m" + "🛡️  Assistant IA Avancé en Cybersécurité - MODE DÉMO" + "\033[0m")
-    print("\033[92m" + "Version 1.0.0 - Développé par @hacker2024-hue" + "\033[0m")
+    print("\033[92m" + "Version 1.0.0 - Développé par Yao Kouakou Luc Annicet" + "\033[0m")
     print("\033[94m" + "=" * 80 + "\033[0m")
     print()
 
