@@ -1,0 +1,65 @@
+# Cursor - Fichiers à ignorer pour CyberSec AI Assistant
+# =====================================================
+
+# Environnements virtuels
+venv/
+env/
+.venv/
+.env/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Logs
+*.log
+logs/
+log/
+
+# Base de données
+*.db
+*.sqlite
+*.sqlite3
+
+# Données temporaires
+temp/
+tmp/
+.tmp/
+
+# Cache et builds
+.cache/
+dist/
+build/
+*.egg-info/
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Git
+.git/
+
+# Docker
+.dockerignore
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Modèles AI (trop volumineux)
+*.bin
+*.safetensors
+models/
+checkpoints/
