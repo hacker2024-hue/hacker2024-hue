@@ -402,9 +402,20 @@ Pour une utilisation en entreprise : enterprise@cybersec-ai.com
 
 ---
 
-## 📄 Licence
+## 📄 Licences
 
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
+### 🆓 Version Open Source
+Une version de démonstration est disponible sous licence MIT pour évaluation et tests.
+
+### 💼 Licence Commerciale
+Pour une utilisation en production, une licence commerciale est requise.
+
+📋 **Documents de licence disponibles :**
+- [LICENSE](LICENSE) - Licence commerciale complète
+- [COMMERCIAL_PRICING.md](COMMERCIAL_PRICING.md) - Tarification et offres
+- [CONTRAT_VENTE_TYPE.md](CONTRAT_VENTE_TYPE.md) - Modèle de contrat
+
+💰 **Tarifs à partir de 2 500€ HT/an** - Voir [grille tarifaire](COMMERCIAL_PRICING.md)
 
 ---
 
