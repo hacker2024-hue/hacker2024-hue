@@ -1,0 +1,141 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🚀 Debug - CyberSec AI Assistant (Principal)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/main.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "DEBUG": "true"
+      },
+      "args": [],
+      "stopOnEntry": false,
+      "justMyCode": true,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "🎮 Debug - Démo Interactive",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/demo_launcher.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [],
+      "stopOnEntry": false,
+      "justMyCode": true,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "🧪 Debug - Tests de Structure",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/test_structure.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [],
+      "stopOnEntry": false,
+      "justMyCode": true,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "🔧 Debug - Moteur IA Core",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/core/ai_engine.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "DEBUG": "true"
+      },
+      "args": [],
+      "stopOnEntry": true,
+      "justMyCode": false,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "🛡️ Debug - Analyseur de Menaces",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/security/threat_analyzer.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "DEBUG": "true"
+      },
+      "args": [],
+      "stopOnEntry": true,
+      "justMyCode": false,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "🌐 Debug - API FastAPI",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "api.main:app",
+        "--host", "0.0.0.0",
+        "--port", "8000",
+        "--reload",
+        "--log-level", "debug"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "DEBUG": "true"
+      },
+      "stopOnEntry": false,
+      "justMyCode": true,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "⚙️ Debug - Configuration Setup",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/cursor_setup.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [],
+      "stopOnEntry": false,
+      "justMyCode": true,
+      "python": "${workspaceFolder}/venv/bin/python",
+      "windows": {
+        "python": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      }
+    }
+  ]
+}

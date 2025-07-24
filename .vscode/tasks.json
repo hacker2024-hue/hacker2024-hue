@@ -1,0 +1,156 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🔧 Installer les dépendances",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/bin/python",
+      "args": ["-m", "pip", "install", "-r", "requirements.txt"],
+      "windows": {
+        "command": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Installe toutes les dépendances Python du projet"
+    },
+    {
+      "label": "🎮 Lancer la démo",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/bin/python",
+      "args": ["demo_launcher.py"],
+      "windows": {
+        "command": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Lance la démonstration interactive de CyberSec AI Assistant"
+    },
+    {
+      "label": "🚀 Lancer le serveur principal",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/bin/python",
+      "args": ["main.py"],
+      "windows": {
+        "command": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Lance le serveur FastAPI principal sur le port 8000"
+    },
+    {
+      "label": "🧪 Tests de structure",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/bin/python",
+      "args": ["test_structure.py"],
+      "windows": {
+        "command": "${workspaceFolder}\\venv\\Scripts\\python.exe"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Vérifie la structure et l'intégrité du projet"
+    },
+    {
+      "label": "🐳 Docker Build",
+      "type": "shell",
+      "command": "docker",
+      "args": ["build", "-t", "cybersec-ai-assistant", "."],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Construit l'image Docker de l'application"
+    },
+    {
+      "label": "🐳 Docker Compose Up",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": ["up", "-d"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "detail": "Lance l'application complète avec Docker Compose"
+    },
+    {
+      "label": "🧹 Nettoyer le cache Python",
+      "type": "shell",
+      "command": "find",
+      "args": [".", "-name", "__pycache__", "-type", "d", "-exec", "rm", "-rf", "{}", "+"],
+      "windows": {
+        "command": "powershell",
+        "args": ["-Command", "Get-ChildItem -Path . -Recurse -Name '__pycache__' | Remove-Item -Recurse -Force"]
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": [],
+      "detail": "Supprime tous les fichiers de cache Python"
+    },
+    {
+      "label": "📦 Créer une archive de release",
+      "type": "shell",
+      "command": "./create_release.sh",
+      "windows": {
+        "command": "powershell",
+        "args": ["-ExecutionPolicy", "Bypass", "-File", "create_release.ps1"]
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": [],
+      "detail": "Crée une archive ZIP de release du projet"
+    }
+  ]
+}

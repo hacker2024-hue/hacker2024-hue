@@ -1,0 +1,74 @@
+{
+  "project": {
+    "name": "CyberSec AI Assistant",
+    "description": "Assistant IA avancé spécialisé en cybersécurité",
+    "version": "1.0.0",
+    "author": "Yao Kouakou Luc Annicet",
+    "email": "yao.kouakou.dev@gmaii.com",
+    "github": "https://github.com/hackerduckman89/cybersec-ai-assistant"
+  },
+  "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": false,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=88"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.rulers": [88],
+  "files.associations": {
+    "*.py": "python",
+    "*.bat": "batch",
+    "*.sh": "shellscript",
+    "Dockerfile": "dockerfile",
+    "docker-compose.yml": "yaml",
+    "*.md": "markdown"
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/venv": true,
+    "**/*.pyc": true,
+    "**/.git": true,
+    "**/logs": true,
+    "**/.pytest_cache": true,
+    "**/node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/venv/**": true,
+    "**/__pycache__/**": true,
+    "**/logs/**": true
+  },
+  "search.exclude": {
+    "**/venv": true,
+    "**/__pycache__": true,
+    "**/logs": true
+  },
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}"
+  },
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}"
+  },
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.startupEditor": "readme",
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "emmet.includeLanguages": {
+    "python": "html"
+  }
+}
