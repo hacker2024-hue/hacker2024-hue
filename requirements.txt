@@ -92,3 +92,12 @@ folium==0.14.0
 geopy==2.3.0
 branca==0.6.0
 jinja2==3.1.2
+
+# Dépendances pour le dashboard et visualisations
+plotly==5.17.0
+pandas==2.1.4
+numpy==1.24.3
+
+# Dépendances pour les notifications
+aiohttp==3.9.1
+requests==2.31.0

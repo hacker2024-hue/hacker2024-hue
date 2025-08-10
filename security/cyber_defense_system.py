@@ -28,6 +28,8 @@ from .network_monitor import NetworkMonitor, NetworkPacket, NetworkAnomaly
 from .ai_threat_analyzer import AIThreatAnalyzer, ThreatFeatures, ThreatPrediction
 from .threat_intelligence_sharing import ThreatIntelligenceSharing, ThreatIntelligence
 from .world_map_monitor import WorldMapMonitor, WorldThreat, WorldStatistics
+from .dashboard_interface import DashboardInterface
+from .notification_system import NotificationSystem, NotificationType, NotificationPriority
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -92,6 +94,8 @@ class CyberDefenseSystem:
         self.ai_analyzer = AIThreatAnalyzer(self.redis_url, self.config.get("models_dir", "models"))
         self.intelligence_sharing = ThreatIntelligenceSharing(self.redis_url)
         self.world_map_monitor = WorldMapMonitor(self.redis_url)
+        self.dashboard_interface = DashboardInterface(self.app)
+        self.notification_system = NotificationSystem(self.redis_url)
         
         # État du système
         self.status = SystemStatus.INITIALIZING
@@ -133,6 +137,7 @@ class CyberDefenseSystem:
             await self.ai_analyzer.initialize()
             await self.intelligence_sharing.initialize()
             await self.world_map_monitor.initialize()
+            await self.notification_system.initialize()
             
             # Démarrage des tâches en arrière-plan
             self.background_tasks = [
@@ -288,6 +293,49 @@ class CyberDefenseSystem:
             """Informations du développeur"""
             return await self.world_map_monitor.get_developer_info()
         
+        @self.app.get("/notifications")
+        async def get_notifications(limit: int = 100):
+            """Récupération des notifications"""
+            notifications = await self.notification_system.get_notifications(limit)
+            return [asdict(notification) for notification in notifications]
+        
+        @self.app.get("/notifications/stats")
+        async def get_notification_stats():
+            """Statistiques des notifications"""
+            return await self.notification_system.get_notification_stats()
+        
+        @self.app.post("/notifications/send")
+        async def send_notification(
+            title: str,
+            message: str,
+            priority: str = "medium",
+            notification_type: str = "email",
+            recipients: List[str] = None
+        ):
+            """Envoi d'une notification"""
+            try:
+                notification_id = await self.notification_system.send_notification(
+                    title=title,
+                    message=message,
+                    priority=NotificationPriority(priority),
+                    notification_type=NotificationType(notification_type),
+                    recipients=recipients or []
+                )
+                return {"message": "Notification envoyée", "id": notification_id}
+            except Exception as e:
+                raise HTTPException(status_code=400, detail=str(e))
+        
+        @self.app.post("/notifications/test")
+        async def test_notification(notification_type: str = "email"):
+            """Test d'une notification"""
+            try:
+                success = await self.notification_system.test_notification(
+                    NotificationType(notification_type)
+                )
+                return {"success": success, "message": "Test de notification effectué"}
+            except Exception as e:
+                raise HTTPException(status_code=400, detail=str(e))
+        
         @self.app.get("/alerts")
         async def get_alerts():
             return [asdict(alert) for alert in self.alerts.values()]
@@ -356,6 +404,7 @@ class CyberDefenseSystem:
             await self.ai_analyzer.add_websocket_connection(websocket)
             await self.intelligence_sharing.add_websocket_connection(websocket)
             await self.world_map_monitor.add_websocket_connection(websocket)
+            await self.notification_system.add_websocket_connection(websocket)
             self.websocket_connections.add(websocket)
             
             logger.info(f"🔌 Nouvelle connexion WebSocket établie")
@@ -387,6 +436,7 @@ class CyberDefenseSystem:
             await self.ai_analyzer.remove_websocket_connection(websocket)
             await self.intelligence_sharing.remove_websocket_connection(websocket)
             await self.world_map_monitor.remove_websocket_connection(websocket)
+            await self.notification_system.remove_websocket_connection(websocket)
             self.websocket_connections.discard(websocket)
             logger.info("🔌 Connexion WebSocket fermée")
     
