@@ -27,6 +27,7 @@ from .proactive_protection import ProactiveProtection, IncidentResponse
 from .network_monitor import NetworkMonitor, NetworkPacket, NetworkAnomaly
 from .ai_threat_analyzer import AIThreatAnalyzer, ThreatFeatures, ThreatPrediction
 from .threat_intelligence_sharing import ThreatIntelligenceSharing, ThreatIntelligence
+from .world_map_monitor import WorldMapMonitor, WorldThreat, WorldStatistics
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -90,6 +91,7 @@ class CyberDefenseSystem:
         self.network_monitor = NetworkMonitor(self.redis_url, self.config.get("network_interface", "eth0"))
         self.ai_analyzer = AIThreatAnalyzer(self.redis_url, self.config.get("models_dir", "models"))
         self.intelligence_sharing = ThreatIntelligenceSharing(self.redis_url)
+        self.world_map_monitor = WorldMapMonitor(self.redis_url)
         
         # État du système
         self.status = SystemStatus.INITIALIZING
@@ -130,6 +132,7 @@ class CyberDefenseSystem:
             await self.network_monitor.initialize()
             await self.ai_analyzer.initialize()
             await self.intelligence_sharing.initialize()
+            await self.world_map_monitor.initialize()
             
             # Démarrage des tâches en arrière-plan
             self.background_tasks = [
@@ -261,6 +264,30 @@ class CyberDefenseSystem:
             intelligence = await self.intelligence_sharing.get_intelligence_history()
             return [asdict(intel) for intel in intelligence]
         
+        @self.app.get("/world-map")
+        async def get_world_map():
+            """Carte mondiale interactive"""
+            from fastapi.responses import HTMLResponse
+            html_content = self.world_map_monitor.generate_world_map_html()
+            return HTMLResponse(content=html_content, status_code=200)
+        
+        @self.app.get("/world-map/statistics")
+        async def get_world_statistics():
+            """Statistiques mondiales"""
+            stats = await self.world_map_monitor.get_world_statistics()
+            return asdict(stats)
+        
+        @self.app.get("/world-map/threats")
+        async def get_world_threats():
+            """Menaces mondiales"""
+            threats = await self.world_map_monitor.get_world_threats()
+            return [asdict(threat) for threat in threats]
+        
+        @self.app.get("/developer/info")
+        async def get_developer_info():
+            """Informations du développeur"""
+            return await self.world_map_monitor.get_developer_info()
+        
         @self.app.get("/alerts")
         async def get_alerts():
             return [asdict(alert) for alert in self.alerts.values()]
@@ -328,6 +355,7 @@ class CyberDefenseSystem:
             await self.network_monitor.add_websocket_connection(websocket)
             await self.ai_analyzer.add_websocket_connection(websocket)
             await self.intelligence_sharing.add_websocket_connection(websocket)
+            await self.world_map_monitor.add_websocket_connection(websocket)
             self.websocket_connections.add(websocket)
             
             logger.info(f"🔌 Nouvelle connexion WebSocket établie")
@@ -358,6 +386,7 @@ class CyberDefenseSystem:
             await self.network_monitor.remove_websocket_connection(websocket)
             await self.ai_analyzer.remove_websocket_connection(websocket)
             await self.intelligence_sharing.remove_websocket_connection(websocket)
+            await self.world_map_monitor.remove_websocket_connection(websocket)
             self.websocket_connections.discard(websocket)
             logger.info("🔌 Connexion WebSocket fermée")
     
