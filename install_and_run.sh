@@ -4,7 +4,8 @@
 # Développé par: Yao Kouakou Luc Anicet
 # Contact: hackerduckman89@gmail.com
 # Contact: yao.kouakou.dev@gmail.com
-# Version: 2.0.0 - Edition Mondiale
+# Téléphone: +225 014094507
+# Version: 3.0.0 - Edition Commerciale Europe & Côte d'Ivoire
 
 set -e
 
@@ -26,7 +27,8 @@ print_banner() {
     echo "    Développé par: Yao Kouakou Luc Anicet"
     echo "    Contact: hackerduckman89@gmail.com"
     echo "    Contact: yao.kouakou.dev@gmail.com"
-    echo "    Version: 2.0.0 - Edition Mondiale"
+    echo "    Téléphone: +225 014094507"
+    echo "    Version: 3.0.0 - Edition Commerciale Europe & Côte d'Ivoire"
     echo "================================================================"
     echo -e "${NC}"
 }
@@ -149,7 +151,8 @@ config = {
         'developer': 'Yao Kouakou Luc Anicet',
         'contact': {
             'primary': 'hackerduckman89@gmail.com',
-            'secondary': 'yao.kouakou.dev@gmail.com'
+            'secondary': 'yao.kouakou.dev@gmail.com',
+            'phone': '+225 014094507'
         },
         'environment': 'production'
     },

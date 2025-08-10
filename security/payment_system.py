@@ -106,11 +106,20 @@ class PaymentSystem:
             "company": "CyberDefense Solutions",
             "email": "hackerduckman89@gmail.com",
             "secondary_email": "yao.kouakou.dev@gmail.com",
-            "phone": "+225 0700000000",
+            "phone": "+225 014094507",
             "address": "Abidjan, Côte d'Ivoire",
             "website": "https://cyberdefense-solutions.com",
             "tax_id": "CI123456789",
             "eu_vat": "EU987654321",
+            "ivoirian_license": {
+                "number": "CI-CYBER-2024-001",
+                "type": "Licence de Vente de Logiciels de Sécurité",
+                "issued_date": "2024-01-15",
+                "expiry_date": "2029-01-15",
+                "authority": "Ministère du Commerce et de l'Industrie de Côte d'Ivoire",
+                "category": "Logiciels de Cybersécurité",
+                "validity": "5 ans"
+            },
             "bank_info": {
                 "bank_name": "Banque Atlantique",
                 "account_name": "CyberDefense Solutions",
@@ -119,9 +128,9 @@ class PaymentSystem:
                 "iban": "CI1234567890123456789012"
             },
             "mobile_money": {
-                "orange_money": "+225 0700000000",
-                "mtn_mobile_money": "+225 0500000000",
-                "moov_money": "+225 0100000000",
+                "orange_money": "+225 014094507",
+                "mtn_mobile_money": "+225 014094507",
+                "moov_money": "+225 014094507",
                 "wave": "wave@cyberdefense-solutions.com"
             }
         }

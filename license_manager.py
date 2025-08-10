@@ -34,9 +34,18 @@ class LicenseManager:
             "company": "CyberDefense Solutions",
             "email": "hackerduckman89@gmail.com",
             "secondary_email": "yao.kouakou.dev@gmail.com",
-            "phone": "+225 0700000000",
+            "phone": "+225 014094507",
             "address": "Abidjan, Côte d'Ivoire",
-            "website": "https://cyberdefense-solutions.com"
+            "website": "https://cyberdefense-solutions.com",
+            "ivoirian_license": {
+                "number": "CI-CYBER-2024-001",
+                "type": "Licence de Vente de Logiciels de Sécurité",
+                "issued_date": "2024-01-15",
+                "expiry_date": "2029-01-15",
+                "authority": "Ministère du Commerce et de l'Industrie de Côte d'Ivoire",
+                "category": "Logiciels de Cybersécurité",
+                "validity": "5 ans"
+            }
         }
     
     async def initialize(self):
@@ -44,6 +53,8 @@ class LicenseManager:
         print("🔐 Initialisation du Gestionnaire de Licences Commerciales")
         print(f"👨‍💻 Développé par: {self.developer_info['name']}")
         print(f"📧 Contact: {self.developer_info['email']}")
+        print(f"📞 Téléphone: {self.developer_info['phone']}")
+        print(f"🔐 Licence Ivoirienne: {self.developer_info['ivoirian_license']['number']}")
         print("=" * 60)
         
         await self.license_system.initialize()

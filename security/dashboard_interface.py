@@ -65,9 +65,10 @@ class DashboardInterface:
             "title": "Expert en Cybersécurité",
             "contacts": {
                 "primary": "hackerduckman89@gmail.com",
-                "secondary": "yao.kouakou.dev@gmail.com"
+                "secondary": "yao.kouakou.dev@gmail.com",
+                "phone": "+225 014094507"
             },
-            "version": "2.0.0 - Edition Mondiale",
+            "version": "3.0.0 - Edition Commerciale Europe & Côte d'Ivoire",
             "description": "Développeur du Système Mondial de Défense Cybernétique",
             "expertise": [
                 "Intelligence Artificielle",
@@ -75,7 +76,13 @@ class DashboardInterface:
                 "Développement de Systèmes",
                 "Analyse de Menaces",
                 "Protection Proactive"
-            ]
+            ],
+            "ivoirian_license": {
+                "number": "CI-CYBER-2024-001",
+                "type": "Licence de Vente de Logiciels de Sécurité",
+                "authority": "Ministère du Commerce et de l'Industrie de Côte d'Ivoire",
+                "validity": "5 ans (2024-2029)"
+            }
         }
         
         # Données simulées pour les graphiques
@@ -527,7 +534,9 @@ class DashboardInterface:
                 <p><strong>Expertise:</strong> {', '.join(developer['expertise'])}</p>
                 <p><strong>Contact Principal:</strong> <a href="mailto:{developer['contacts']['primary']}">{developer['contacts']['primary']}</a></p>
                 <p><strong>Contact Secondaire:</strong> <a href="mailto:{developer['contacts']['secondary']}">{developer['contacts']['secondary']}</a></p>
+                <p><strong>Téléphone:</strong> <a href="tel:{developer['contacts']['phone']}">{developer['contacts']['phone']}</a></p>
                 <p><strong>Version:</strong> {developer['version']}</p>
+                <p><strong>Licence Ivoirienne:</strong> {developer['ivoirian_license']['number']}</p>
             </div>
         </div>
         
@@ -644,6 +653,8 @@ class DashboardInterface:
     <div class="footer">
         <p>🌐 Système Mondial de Défense Cybernétique | 
         Développé avec passion par <a href="mailto:{developer['contacts']['primary']}">{developer['name']}</a> | 
+        Tél: <a href="tel:{developer['contacts']['phone']}">{developer['contacts']['phone']}</a> | 
+        Licence: {developer['ivoirian_license']['number']} | 
         Version {developer['version']}</p>
     </div>
 </body>
@@ -699,6 +710,17 @@ class DashboardInterface:
             color: #74b9ff;
             text-decoration: none;
         }}
+        .license-info {{
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            border-left: 4px solid #00b894;
+        }}
+        .license-info h4 {{
+            color: #00b894;
+            margin-bottom: 10px;
+        }}
     </style>
 </head>
 <body>
@@ -710,6 +732,14 @@ class DashboardInterface:
             <p>Contactez le développeur:</p>
             <p><a href="mailto:hackerduckman89@gmail.com">hackerduckman89@gmail.com</a></p>
             <p><a href="mailto:yao.kouakou.dev@gmail.com">yao.kouakou.dev@gmail.com</a></p>
+            <p><a href="tel:+225014094507">+225 014094507</a></p>
+        </div>
+        <div class="license-info">
+            <h4>🔐 Licence de Vente Ivoirienne</h4>
+            <p><strong>Numéro:</strong> CI-CYBER-2024-001</p>
+            <p><strong>Type:</strong> Licence de Vente de Logiciels de Sécurité</p>
+            <p><strong>Autorité:</strong> Ministère du Commerce et de l'Industrie de Côte d'Ivoire</p>
+            <p><strong>Validité:</strong> 5 ans (2024-2029)</p>
         </div>
     </div>
 </body>

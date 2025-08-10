@@ -77,7 +77,8 @@ config = {
         'developer': 'Yao Kouakou Luc Anicet',
         'contact': {
             'primary': 'hackerduckman89@gmail.com',
-            'secondary': 'yao.kouakou.dev@gmail.com'
+            'secondary': 'yao.kouakou.dev@gmail.com',
+            'phone': '+225 014094507'
         },
         'environment': 'production'
     },

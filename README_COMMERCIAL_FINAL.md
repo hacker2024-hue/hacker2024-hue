@@ -3,8 +3,10 @@
 ## 👨‍💻 Développé par: Yao Kouakou Luc Anicet
 **Contact Principal:** hackerduckman89@gmail.com  
 **Contact Secondaire:** yao.kouakou.dev@gmail.com  
+**Téléphone:** +225 014094507  
 **Version:** 3.0.0 - Edition Commerciale Europe & Côte d'Ivoire  
-**Site Web:** https://cyberdefense-solutions.com
+**Site Web:** https://cyberdefense-solutions.com  
+**Licence Ivoirienne:** CI-CYBER-2024-001
 
 ---
 
@@ -220,7 +222,7 @@ python demo_advanced_features.py
 
 ### Conformité
 - **Europe:** RGPD, ENISA guidelines
-- **Côte d'Ivoire:** Autorité de Régulation des Télécommunications
+- **Côte d'Ivoire:** Ministère du Commerce et de l'Industrie (Licence CI-CYBER-2024-001)
 - **International:** ISO 27001, NIST Cybersecurity Framework
 
 ---
@@ -318,7 +320,7 @@ docker run -d -p 8000:8000 --name cyberdefense cyberdefense-system
 
 ### Contact Support
 - **Email:** support@cyberdefense-solutions.com
-- **Téléphone:** +225 0700000000
+- **Téléphone:** +225 014094507
 - **Chat:** Disponible dans le dashboard
 - **Documentation:** https://docs.cyberdefense-solutions.com
 
@@ -374,8 +376,9 @@ docker run -d -p 8000:8000 --name cyberdefense cyberdefense-system
 **Contact:**
 - **Email Principal:** hackerduckman89@gmail.com
 - **Email Secondaire:** yao.kouakou.dev@gmail.com
-- **Téléphone:** +225 0700000000
+- **Téléphone:** +225 014094507
 - **Site Web:** https://cyberdefense-solutions.com
+- **Licence Ivoirienne:** CI-CYBER-2024-001
 
 ---
 
