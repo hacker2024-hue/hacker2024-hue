@@ -25,6 +25,8 @@ import uvicorn
 from .global_threat_detection import GlobalThreatDetector, NetworkEvent, GlobalThreat
 from .proactive_protection import ProactiveProtection, IncidentResponse
 from .network_monitor import NetworkMonitor, NetworkPacket, NetworkAnomaly
+from .ai_threat_analyzer import AIThreatAnalyzer, ThreatFeatures, ThreatPrediction
+from .threat_intelligence_sharing import ThreatIntelligenceSharing, ThreatIntelligence
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -86,6 +88,8 @@ class CyberDefenseSystem:
         self.threat_detector = GlobalThreatDetector(self.redis_url)
         self.protection_system = ProactiveProtection(self.redis_url)
         self.network_monitor = NetworkMonitor(self.redis_url, self.config.get("network_interface", "eth0"))
+        self.ai_analyzer = AIThreatAnalyzer(self.redis_url, self.config.get("models_dir", "models"))
+        self.intelligence_sharing = ThreatIntelligenceSharing(self.redis_url)
         
         # État du système
         self.status = SystemStatus.INITIALIZING
@@ -124,6 +128,8 @@ class CyberDefenseSystem:
             await self.threat_detector.initialize()
             await self.protection_system.initialize()
             await self.network_monitor.initialize()
+            await self.ai_analyzer.initialize()
+            await self.intelligence_sharing.initialize()
             
             # Démarrage des tâches en arrière-plan
             self.background_tasks = [
@@ -230,6 +236,31 @@ class CyberDefenseSystem:
             anomalies = await self.network_monitor.get_network_anomalies()
             return [asdict(anomaly) for anomaly in anomalies]
         
+        @self.app.get("/ai/models")
+        async def get_ai_models():
+            return await self.ai_analyzer.get_model_statistics()
+        
+        @self.app.get("/ai/predictions")
+        async def get_ai_predictions():
+            predictions = await self.ai_analyzer.get_prediction_history()
+            return [asdict(prediction) for prediction in predictions]
+        
+        @self.app.get("/intelligence/search")
+        async def search_intelligence(query: str, intelligence_type: str = None):
+            from .threat_intelligence_sharing import IntelligenceType
+            intel_type = IntelligenceType(intelligence_type) if intelligence_type else None
+            results = await self.intelligence_sharing.search_intelligence(query, intel_type)
+            return [asdict(intel) for intel in results]
+        
+        @self.app.get("/intelligence/statistics")
+        async def get_intelligence_statistics():
+            return await self.intelligence_sharing.get_intelligence_statistics()
+        
+        @self.app.get("/intelligence/history")
+        async def get_intelligence_history():
+            intelligence = await self.intelligence_sharing.get_intelligence_history()
+            return [asdict(intel) for intel in intelligence]
+        
         @self.app.get("/alerts")
         async def get_alerts():
             return [asdict(alert) for alert in self.alerts.values()]
@@ -295,6 +326,8 @@ class CyberDefenseSystem:
             await self.threat_detector.add_websocket_connection(websocket)
             await self.protection_system.add_websocket_connection(websocket)
             await self.network_monitor.add_websocket_connection(websocket)
+            await self.ai_analyzer.add_websocket_connection(websocket)
+            await self.intelligence_sharing.add_websocket_connection(websocket)
             self.websocket_connections.add(websocket)
             
             logger.info(f"🔌 Nouvelle connexion WebSocket établie")
@@ -323,6 +356,8 @@ class CyberDefenseSystem:
             await self.threat_detector.remove_websocket_connection(websocket)
             await self.protection_system.remove_websocket_connection(websocket)
             await self.network_monitor.remove_websocket_connection(websocket)
+            await self.ai_analyzer.remove_websocket_connection(websocket)
+            await self.intelligence_sharing.remove_websocket_connection(websocket)
             self.websocket_connections.discard(websocket)
             logger.info("🔌 Connexion WebSocket fermée")
     
