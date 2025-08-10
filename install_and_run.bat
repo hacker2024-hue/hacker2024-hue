@@ -80,6 +80,13 @@ config = {
             'secondary': 'yao.kouakou.dev@gmail.com',
             'phone': '+225 014094507'
         },
+        'security': {
+            'enabled': True,
+            'master_password': 'AZ12ER34',
+            'max_attempts': 3,
+            'lockout_duration': 300,
+            'token_expiry': 3600
+        },
         'environment': 'production'
     },
     'redis': {

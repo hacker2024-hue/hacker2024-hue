@@ -30,6 +30,8 @@ from .threat_intelligence_sharing import ThreatIntelligenceSharing, ThreatIntell
 from .world_map_monitor import WorldMapMonitor, WorldThreat, WorldStatistics
 from .dashboard_interface import DashboardInterface
 from .notification_system import NotificationSystem, NotificationType, NotificationPriority
+from .access_protection import AccessProtection, access_protection
+from .auth_interface import AuthInterface
 
 # Configuration du logging
 logging.basicConfig(level=logging.INFO)
@@ -96,6 +98,8 @@ class CyberDefenseSystem:
         self.world_map_monitor = WorldMapMonitor(self.redis_url)
         self.dashboard_interface = DashboardInterface(self.app)
         self.notification_system = NotificationSystem(self.redis_url)
+        self.access_protection = access_protection
+        self.auth_interface = AuthInterface(self.app)
         
         # État du système
         self.status = SystemStatus.INITIALIZING
@@ -138,6 +142,7 @@ class CyberDefenseSystem:
             await self.intelligence_sharing.initialize()
             await self.world_map_monitor.initialize()
             await self.notification_system.initialize()
+        await self.access_protection.initialize()
             
             # Démarrage des tâches en arrière-plan
             self.background_tasks = [
