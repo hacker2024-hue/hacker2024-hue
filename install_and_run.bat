@@ -9,7 +9,7 @@ echo ================================================================
 echo    Développé par: Yao Kouakou Luc Anicet
 echo    Contact: hackerduckman89@gmail.com
 echo    Contact: yao.kouakou.dev@gmail.com
-echo    Version: 2.0.0 - Edition Mondiale
+echo    Version: 3.0.0 - Edition Commerciale Europe & Côte d'Ivoire
 echo ================================================================
 echo.
 
@@ -73,7 +73,7 @@ import json
 config = {
     'system': {
         'name': 'CyberDefense Mondial - Yao Kouakou',
-        'version': '2.0.0',
+        'version': '3.0.0 - Edition Commerciale',
         'developer': 'Yao Kouakou Luc Anicet',
         'contact': {
             'primary': 'hackerduckman89@gmail.com',
@@ -114,6 +114,17 @@ config = {
         'enabled': True,
         'api_key': '',
         'update_interval': 300
+    },
+    'license': {
+        'enabled': True,
+        'commercial': True,
+        'regions': ['europe', 'cote_divoire'],
+        'validation_interval': 3600
+    },
+    'payment': {
+        'enabled': True,
+        'gateways': ['stripe', 'orange_money', 'mtn_mobile_money', 'moov_money', 'wave', 'crypto'],
+        'currencies': ['EUR', 'XOF', 'USD', 'BTC', 'ETH']
     }
 }
 with open('config.json', 'w', encoding='utf-8') as f:
@@ -140,6 +151,8 @@ echo    Dashboard: http://localhost:8000
 echo    API Docs:  http://localhost:8000/docs
 echo    WebSocket: ws://localhost:8000/ws
 echo    Carte Monde: http://localhost:8000/world-map
+echo    Licences: http://localhost:8000/licenses
+echo    Paiements: http://localhost:8000/payments
 echo ================================================================
 echo.
 
@@ -153,5 +166,6 @@ echo ================================================================
 echo    Développé par: Yao Kouakou Luc Anicet
 echo    Contact: hackerduckman89@gmail.com
 echo    Contact: yao.kouakou.dev@gmail.com
+echo    Version: 3.0.0 - Edition Commerciale Europe & Côte d'Ivoire
 echo ================================================================
 pause

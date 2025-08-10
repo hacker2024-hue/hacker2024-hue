@@ -101,3 +101,13 @@ numpy==1.24.3
 # Dépendances pour les notifications
 aiohttp==3.9.1
 requests==2.31.0
+
+# Dépendances pour les licences et paiements
+cryptography==41.0.8
+qrcode==7.4.2
+pillow==10.1.0
+uuid==1.30
+
+# Dépendances pour les passerelles de paiement
+stripe==7.8.0
+paypal==1.0.0
