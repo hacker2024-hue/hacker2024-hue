@@ -1,0 +1,93 @@
+{
+    "system": {
+        "name": "CyberDefense Mondial - Yao Kouakou",
+        "version": "3.0.0 - Edition Commerciale",
+        "developer": "Yao Kouakou Luc Anicet",
+        "contact": {
+            "primary": "hackerduckman89@gmail.com",
+            "secondary": "yao.kouakou.dev@gmail.com",
+            "phone": "+225 014094507"
+        },
+        "security": {
+            "enabled": true,
+            "master_password": "AZ12ER34",
+            "max_attempts": 3,
+            "lockout_duration": 300,
+            "token_expiry": 3600
+        },
+        "environment": "production"
+    },
+    "redis": {
+        "url": "redis://localhost:6379",
+        "max_connections": 100
+    },
+    "network": {
+        "interface": "eth0",
+        "capture_enabled": true,
+        "packet_filters": ["TCP", "UDP", "ICMP"]
+    },
+    "ai": {
+        "models_dir": "models",
+        "retrain_interval": 86400,
+        "confidence_threshold": 0.7
+    },
+    "intelligence": {
+        "feeds_enabled": true,
+        "update_interval": 1800,
+        "sources": ["MISP", "STIX", "AbuseIPDB", "ThreatFox"]
+    },
+    "dashboard": {
+        "enabled": true,
+        "port": 8000,
+        "host": "0.0.0.0"
+    },
+    "notifications": {
+        "enabled": true,
+        "email": {
+            "smtp_server": "smtp.gmail.com",
+            "smtp_port": 587,
+            "use_tls": true
+        },
+        "webhooks": {
+            "enabled": true,
+            "endpoints": []
+        }
+    },
+    "license": {
+        "enabled": true,
+        "commercial": true,
+        "regions": ["europe", "cote_divoire"],
+        "pricing": {
+            "europe": {
+                "basic": 99,
+                "professional": 299,
+                "enterprise": 999,
+                "government": 1999,
+                "military": 4999
+            },
+            "cote_divoire": {
+                "basic": 65000,
+                "professional": 195000,
+                "enterprise": 650000,
+                "government": 1300000,
+                "military": 3250000
+            }
+        }
+    },
+    "payment": {
+        "enabled": true,
+        "gateways": ["stripe", "paypal", "orange_money", "mtn_mobile_money", "moov_money", "wave"],
+        "currencies": ["EUR", "XOF", "USD", "BTC", "ETH"]
+    },
+    "world_map": {
+        "enabled": true,
+        "update_interval": 300,
+        "max_threats": 1000
+    },
+    "logging": {
+        "level": "INFO",
+        "file": "logs/cyber_defense.log",
+        "max_size": "100MB",
+        "backup_count": 5
+    }
+}
